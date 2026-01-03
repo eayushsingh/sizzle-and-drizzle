@@ -1,0 +1,945 @@
+:root {
+  --bg: #050609;
+  --bg-elevated: #0c0f16;
+  --bg-softer: #11151f;
+  --accent: #ff3434;
+  --accent-soft: #ff7a3c;
+  --accent-glow: rgba(255, 52, 52, 0.45);
+  --text-main: #f8fafc;
+  --text-muted: #9ca3af;
+  --border-subtle: rgba(148, 163, 184, 0.35);
+  --radius-lg: 18px;
+  --radius-xl: 26px;
+  --shadow-soft: 0 22px 45px rgba(0, 0, 0, 0.75);
+  --duration-fast: 180ms;
+  --duration-med: 260ms;
+  --duration-slow: 900ms;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Inter", "SF Pro Text", sans-serif;
+  background: radial-gradient(circle at top, #171621 0, #050609 55%);
+  color: var(--text-main);
+  min-height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+main {
+  flex: 1;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 5vw;
+  backdrop-filter: blur(16px);
+  background: linear-gradient(to bottom, rgba(5, 6, 9, 0.95), rgba(5, 6, 9, 0.7));
+  border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+}
+
+.logo {
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.logo span {
+  color: var(--accent);
+}
+
+.nav {
+  display: flex;
+  gap: 1.4rem;
+  font-size: 0.9rem;
+}
+
+.nav a {
+  position: relative;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-weight: 600;
+}
+
+.nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.35rem;
+  width: 0;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-soft));
+  transition: width var(--duration-fast) ease-out;
+}
+
+.nav a:hover::after {
+  width: 100%;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.search-wrapper {
+  position: relative;
+}
+
+.search-input {
+  min-width: 190px;
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid rgba(55, 65, 81, 0.9);
+  background: radial-gradient(circle at top left, rgba(15, 23, 42, 0.95), #020617);
+  color: var(--text-main);
+  font-size: 0.8rem;
+}
+
+.search-input::placeholder {
+  color: rgba(148, 163, 184, 0.7);
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: rgba(248, 113, 113, 0.9);
+  box-shadow: 0 0 0 1px rgba(248, 113, 113, 0.7);
+}
+
+.cart-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  padding: 0.35rem 0.9rem;
+  background: radial-gradient(circle at top left, rgba(248, 113, 113, 0.14), rgba(15, 23, 42, 0.9));
+  color: var(--text-main);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform var(--duration-fast) ease-out, box-shadow var(--duration-fast) ease-out, border-color var(--duration-fast) ease-out, background var(--duration-fast) ease-out;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.55);
+}
+
+.cart-button:hover {
+  transform: translateY(-1px) scale(1.02);
+  border-color: rgba(248, 113, 113, 0.75);
+  background: radial-gradient(circle at top left, rgba(248, 113, 113, 0.22), rgba(15, 23, 42, 0.96));
+}
+
+.cart-count {
+  min-width: 1.4rem;
+  height: 1.4rem;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.76rem;
+}
+
+.hero {
+  position: relative;
+  padding: 4.5rem 5vw 3.75rem;
+}
+
+.hero-full {
+  min-height: calc(100vh - 70px);
+  display: flex;
+  align-items: center;
+}
+
+.hero-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
+  gap: 3.5rem;
+  align-items: center;
+  width: 100%;
+}
+
+.hero-copy {
+  max-width: 520px;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--accent-soft);
+  font-weight: 700;
+  font-size: 0.8rem;
+  margin-bottom: 0.75rem;
+}
+
+.hero h1 {
+  font-size: clamp(2.8rem, 4.1vw, 4rem);
+  line-height: 1;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin: 0 0 0.7rem;
+}
+
+.hero h1 span {
+  color: var(--accent);
+}
+
+.tagline {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  max-width: 470px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.85rem;
+  margin: 1.6rem 0 1rem;
+}
+
+.subcopy {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  padding: 0.7rem 1.5rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  cursor: pointer;
+  transition: transform var(--duration-fast) ease-out, box-shadow var(--duration-fast) ease-out, background var(--duration-fast) ease-out, border-color var(--duration-fast) ease-out, color var(--duration-fast) ease-out;
+}
+
+.btn.primary {
+  background: linear-gradient(120deg, var(--accent), var(--accent-soft));
+  color: #fff;
+  box-shadow: 0 18px 35px var(--accent-glow);
+}
+
+.btn.primary:hover {
+  transform: translateY(-1px) scale(1.02);
+  box-shadow: 0 22px 45px var(--accent-glow);
+}
+
+.btn.ghost {
+  border-color: rgba(148, 163, 184, 0.5);
+  color: var(--text-main);
+  background: rgba(15, 23, 42, 0.85);
+}
+
+.btn.ghost:hover {
+  background: rgba(15, 23, 42, 1);
+  border-color: rgba(248, 113, 113, 0.7);
+}
+
+.btn.full-width {
+  width: 100%;
+}
+
+.hero-visual {
+  position: relative;
+  justify-self: center;
+}
+
+.hero-bottle-stack {
+  position: relative;
+  /* make the hero bottle stack larger and allow bottles to breathe */
+  width: min(560px, 86vw);
+  aspect-ratio: 3 / 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-bottle {
+  position: absolute;
+  /* softer, more natural shadow so labels remain readable */
+  filter: drop-shadow(0 22px 48px rgba(0, 0, 0, 0.85));
+  transform-origin: center bottom;
+  animation: floatY 4s ease-in-out infinite alternate;
+}
+
+.hero-bottle img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center bottom;
+  /* slight boost in vibrance for darker images */
+  filter: brightness(1.05) contrast(1.06) saturate(1.04);
+}
+
+.hero-bottle-main {
+  width: 68%;
+  z-index: 4;
+}
+
+.hero-bottle-side {
+  width: 48%;
+  opacity: 0.86;
+  filter: saturate(1.02) brightness(1.02);
+}
+
+.hero-bottle-left {
+  left: 2%;
+  transform: translateY(12px) rotate(-10deg);
+}
+
+.hero-bottle-right {
+  right: 2%;
+  transform: translateY(18px) rotate(12deg);
+}
+
+.hero-chilies-floor {
+  position: absolute;
+  bottom: -10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  pointer-events: none;
+}
+
+.hero-chilies-floor img {
+  width: 100%;
+  /* reduce visual competition with the bottle labels */
+  filter: drop-shadow(0 10px 30px rgba(239, 68, 68, 0.62)) blur(0.3px);
+  opacity: 0.9;
+}
+
+.section {
+  padding: 3.25rem 5vw;
+}
+
+/* Listing layout: left filters and main product grid */
+.listing {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.listing-filters .filters-card {
+  background: linear-gradient(180deg, rgba(15,23,42,0.96), rgba(12,15,20,0.98));
+  border-radius: 12px;
+  padding: 1rem;
+  border: 1px solid rgba(55,65,81,0.9);
+}
+
+.filters-card h3 {
+  margin: 0 0 0.6rem 0;
+  font-size: 1.05rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-main);
+}
+
+.filter-group {
+  margin-top: 0.8rem;
+}
+
+.filter-group h4 {
+  margin: 0 0 0.4rem 0;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.filter-group label {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-size: 0.9rem;
+  color: var(--text-main);
+}
+
+.section-header {
+  max-width: 640px;
+  margin: 0 auto 2rem;
+  text-align: center;
+}
+
+.section-header.inline {
+  margin: 0 0 1.5rem;
+  text-align: left;
+}
+
+.section-header h2 {
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+}
+
+.section-header p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.section-tight {
+  padding-top: 2.4rem;
+}
+
+.bottle-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.75rem;
+}
+
+/* When used as listing-grid we want larger, taller vertical cards */
+.listing-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2rem;
+}
+
+.bottle-tile {
+  position: relative;
+  border-radius: 28px;
+  /* tighter padding gives more space to image area and reduces bottom banding */
+  padding: 1rem 1rem 1.2rem;
+  background: radial-gradient(circle at top, rgba(12, 15, 20, 0.94), #06060a);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.88);
+  overflow: hidden;
+}
+
+/* New product-card style for listing UX */
+.product-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  border-radius: 10px;
+  background: linear-gradient(180deg, rgba(12,15,20,0.95), rgba(8,10,12,0.98));
+  padding: 0.6rem;
+  border: 1px solid rgba(55,65,81,0.9);
+}
+
+.product-image {
+  width: 100%;
+  height: 320px;
+  border-radius: 8px;
+  overflow: hidden;
+  display: block;
+  background: linear-gradient(180deg, #050609 0%, #0b0c0f 100%);
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform var(--duration-med) ease-out, filter var(--duration-med) ease-out;
+}
+
+.product-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.product-title {
+  font-weight: 700;
+  font-size: 1.02rem;
+}
+
+.product-sub {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.product-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.18rem 0.5rem;
+  font-size: 0.75rem;
+  border-radius: 6px;
+  background: rgba(255,255,255,0.06);
+  color: var(--text-main);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.rating {
+  font-size: 0.9rem;
+  color: #fbbf24;
+}
+
+.product-card .btn.primary {
+  padding: 0.55rem 0.9rem;
+  font-size: 0.85rem;
+}
+
+.bottle-parallax {
+  position: relative;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.bottle-parallax img {
+  display: block;
+  /* larger images so labels and brand are visible */
+  width: 92%;
+  max-height: 360px;
+  margin: 0 auto;
+  object-fit: contain;
+  object-position: center bottom;
+  transform-origin: center bottom;
+  transition: transform var(--duration-med) ease-out, filter var(--duration-med) ease-out;
+  /* slightly brighter and crisper without washing out the image */
+  filter: brightness(1.06) contrast(1.06) saturate(1.06) drop-shadow(0 20px 48px rgba(0, 0, 0, 0.95));
+}
+
+.bottle-parallax::after {
+  /* subtle rim light to separate bottle from the dark background */
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 10%;
+  transform: translateX(-50%);
+  width: 86%;
+  height: 86%;
+  pointer-events: none;
+  border-radius: 999px;
+  background: radial-gradient(ellipse at center, rgba(255, 80, 80, 0.06) 0%, transparent 40%);
+  mix-blend-mode: screen;
+}
+
+.bottle-chilies {
+  position: absolute;
+  bottom: -6%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120%;
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+.bottle-chilies img {
+  width: 100%;
+  filter: drop-shadow(0 12px 45px rgba(248, 113, 113, 0.85));
+}
+
+.bottle-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem 1.1rem 1.2rem;
+  /* move the subtle darkening toward the bottom so the bottle body stays bright */
+  background: linear-gradient(to top, rgba(6, 8, 10, 0.72), rgba(6, 8, 10, 0.25) 28%, transparent 56%);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity var(--duration-med) ease-out, transform var(--duration-med) ease-out;
+}
+
+.bottle-meta-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  font-size: 0.8rem;
+}
+
+.bottle-name {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.bottle-heat {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.bottle-heat span {
+  font-size: 0.95rem;
+}
+
+.bottle-meta-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.bottle-price {
+  font-weight: 800;
+  font-size: 1.05rem;
+}
+
+/* improve readability of overlay text */
+.bottle-name,
+.bottle-price {
+  text-shadow: 0 6px 20px rgba(0,0,0,0.8);
+  color: var(--text-main);
+}
+
+.bottle-tile:hover .bottle-overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.bottle-tile:hover .bottle-parallax img {
+  transform: translateY(-10px) scale(1.04);
+  filter: brightness(1.08) contrast(1.06) saturate(1.08) drop-shadow(0 28px 72px rgba(0, 0, 0, 0.95));
+}
+
+.cart-summary-line {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.cart-summary-line span {
+  font-weight: 600;
+  color: var(--accent-soft);
+}
+
+.cart {
+  background: radial-gradient(circle at top left, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 1));
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-subtle);
+  padding: 1rem 1.1rem;
+  max-height: 360px;
+  overflow-y: auto;
+}
+
+.cart-empty {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  padding: 2.5rem 1rem;
+}
+
+.cart-item {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+  gap: 0.75rem;
+  align-items: center;
+  padding: 0.6rem 0.35rem;
+  border-bottom: 1px dashed rgba(55, 65, 81, 0.9);
+}
+
+.cart-item:last-child {
+  border-bottom: none;
+}
+
+.cart-item-main {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.cart-item-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.cart-item-meta {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.cart-item-controls {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.35rem;
+}
+
+.qty-control {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  border: 1px solid rgba(75, 85, 99, 0.9);
+  overflow: hidden;
+}
+
+.qty-control button {
+  background: transparent;
+  border: none;
+  color: var(--text-main);
+  width: 1.45rem;
+  height: 1.45rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.qty-control span {
+  min-width: 1.4rem;
+  text-align: center;
+  font-size: 0.8rem;
+}
+
+.remove-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+.cart-totals {
+  margin-top: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.9rem;
+}
+
+.cart-totals span:last-child {
+  font-weight: 700;
+}
+
+.split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+  gap: 1.75rem;
+  align-items: flex-start;
+}
+
+.checkout-form {
+  background: radial-gradient(circle at top left, rgba(248, 113, 113, 0.1), rgba(15, 23, 42, 0.95));
+  border-radius: var(--radius-xl);
+  padding: 1.4rem 1.35rem 1.35rem;
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-soft);
+}
+
+.form-row {
+  margin-bottom: 0.9rem;
+}
+
+.form-row label {
+  display: block;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--text-muted);
+  margin-bottom: 0.35rem;
+}
+
+.form-row input {
+  width: 100%;
+  padding: 0.65rem 0.75rem;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(55, 65, 81, 0.9);
+  background: rgba(15, 23, 42, 0.96);
+  color: var(--text-main);
+  font-size: 0.9rem;
+}
+
+.form-row input:focus {
+  outline: none;
+  border-color: rgba(248, 113, 113, 0.85);
+  box-shadow: 0 0 0 1px rgba(248, 113, 113, 0.55);
+}
+
+.form-row.two-col {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: 0.75rem;
+}
+
+.field-error {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.75rem;
+  color: #fca5a5;
+  min-height: 0.9rem;
+}
+
+.order-summary {
+  background: rgba(15, 23, 42, 0.96);
+  border-radius: 0.9rem;
+  padding: 0.7rem 0.8rem;
+  border: 1px solid rgba(55, 65, 81, 0.95);
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.order-total {
+  font-weight: 800;
+  font-size: 1rem;
+}
+
+.checkout-note {
+  margin-top: 0.65rem;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.checkout-success {
+  margin-top: 0.65rem;
+  font-size: 0.85rem;
+  color: #bbf7d0;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+}
+
+.about-card {
+  background: radial-gradient(circle at top left, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 1));
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(55, 65, 81, 0.95);
+  padding: 1.3rem 1.2rem;
+}
+
+.about-card h3 {
+  margin-top: 0;
+  margin-bottom: 0.4rem;
+  font-size: 1rem;
+}
+
+.about-card p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.site-footer {
+  padding: 1.5rem 5vw 2rem;
+  border-top: 1px solid rgba(30, 64, 175, 0.7);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-align: center;
+  background: radial-gradient(circle at top, rgba(15, 23, 42, 0.9), #020617);
+}
+
+@keyframes floatY {
+  from {
+    transform: translate3d(0, 0, 0) rotateX(8deg) rotateY(-6deg);
+  }
+  to {
+    transform: translate3d(0, -14px, 0) rotateX(4deg) rotateY(4deg);
+  }
+}
+
+@keyframes swing {
+  from {
+    transform: rotate(-6deg);
+  }
+  to {
+    transform: rotate(6deg);
+  }
+}
+
+@media (max-width: 900px) {
+  .nav {
+    display: none;
+  }
+
+  .hero {
+    grid-template-columns: minmax(0, 1fr);
+    padding-top: 3.25rem;
+  }
+
+  /* make hero bottle stack responsive */
+  .hero-bottle-stack {
+    width: min(420px, 86vw);
+    aspect-ratio: 3 / 5;
+  }
+
+  .bottle-parallax img {
+    width: 86%;
+    max-height: 320px;
+  }
+
+  .hero-chilis {
+    order: -1;
+    justify-content: flex-start;
+  }
+
+  .hero-content {
+    max-width: none;
+  }
+
+  .split {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .checkout-form,
+  .cart {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    padding-inline: 1.25rem;
+  }
+
+  .section {
+    padding-inline: 1.25rem;
+  }
+
+  .site-header {
+    padding-inline: 1.1rem;
+  }
+
+  .form-row.two-col {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .cart-item {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .cart-item-controls {
+    justify-content: flex-start;
+  }
+  .bottle-parallax img {
+    width: 96%;
+    max-height: 260px;
+  }
+}

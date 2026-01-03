@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sizzle &amp; Drizzle | Hot Sauces That Hit Different</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="logo">Sizzle <span>&amp;</span> Drizzle</div>
+    <nav class="nav">
+      <a href="#shop">Shop</a>
+      <a href="#about">About</a>
+      <a href="#checkout">Checkout</a>
+    </nav>
+    <div class="header-right">
+      <div class="search-wrapper">
+        <input
+          type="search"
+          id="sauce-search"
+          class="search-input"
+          placeholder="Search sauces"
+          autocomplete="off"
+        />
+      </div>
+      <button class="cart-button" id="cart-toggle" aria-label="View cart">
+        <span class="cart-icon">🛒</span>
+        <span class="cart-count" id="cart-count">0</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero hero-full" id="top">
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow">Premium Crafted Hot Sauce</p>
+          <h1>Sizzle <span>&amp;</span> Drizzle</h1>
+          <p class="tagline">Bottle-first, flavor-obsessed heat for people who drizzle on everything.</p>
+          <div class="hero-actions">
+            <a href="#shop" class="btn primary">Shop Now</a>
+            <a href="#shop" class="btn ghost">Explore Heat</a>
+          </div>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+          <div class="hero-bottle-stack">
+            <div class="hero-bottle hero-bottle-main">
+              <img src="assets/bottle-littered.png" alt="Sizzle &amp; Drizzle signature hot sauce bottle" />
+            </div>
+            <div class="hero-bottle hero-bottle-side hero-bottle-left">
+              <img src="assets/bottle-green.png" alt="Sizzle &amp; Drizzle verde hot sauce bottle" />
+            </div>
+            <div class="hero-bottle hero-bottle-side hero-bottle-right">
+              <img src="assets/bottle-orange.png" alt="Sizzle &amp; Drizzle citrus hot sauce bottle" />
+            </div>
+            <div class="hero-chilies-floor">
+              <img src="assets/pure-redchilli.png" alt="Red chili peppers" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-tight" id="shop">
+      <div class="listing">
+        <aside class="listing-filters">
+          <div class="filters-card">
+            <h3>Refine By</h3>
+            <div class="filter-group">
+              <h4>Shop For</h4>
+              <label><input type="checkbox" checked /> All</label>
+              <label><input type="checkbox" /> Bottles</label>
+              <label><input type="checkbox" /> Sets</label>
+            </div>
+            <div class="filter-group">
+              <h4>Category</h4>
+              <label><input type="checkbox" /> Hot Sauce</label>
+              <label><input type="checkbox" /> Marinade</label>
+            </div>
+            <div class="filter-group">
+              <h4>Price</h4>
+              <label><input type="radio" name="price" /> Under $12</label>
+              <label><input type="radio" name="price" /> $12 - $15</label>
+            </div>
+          </div>
+        </aside>
+
+        <div class="listing-main">
+          <header class="section-header listing-header">
+            <h2>Shop the Heat Gallery</h2>
+            <p>High-quality photos, clean layout — tap a bottle to add it to your cart.</p>
+          </header>
+
+          <div class="bottle-gallery listing-grid" id="products-grid">
+            <!-- Products injected by JS as image-first tiles -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section split" id="cart-section">
+      <div class="split-column">
+        <header class="section-header inline">
+          <h2>Your Cart</h2>
+          <p>Adjust quantities and make it a multi-bottle party.</p>
+        </header>
+        <div class="cart" id="cart"></div>
+      </div>
+      <div class="split-column" id="checkout">
+        <header class="section-header inline">
+          <h2>Checkout</h2>
+          <p>Mock checkout — no real charges, just delicious imagination.</p>
+        </header>
+        <form class="checkout-form" id="checkout-form" novalidate>
+          <div class="form-row">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="Spice Lover" required />
+            <span class="field-error" data-for="name"></span>
+          </div>
+          <div class="form-row">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required />
+            <span class="field-error" data-for="email"></span>
+          </div>
+          <div class="form-row two-col">
+            <div>
+              <label for="address">Address</label>
+              <input type="text" id="address" name="address" placeholder="123 Heatwave Lane" required />
+              <span class="field-error" data-for="address"></span>
+            </div>
+            <div>
+              <label for="city">City</label>
+              <input type="text" id="city" name="city" placeholder="Scoville Springs" required />
+              <span class="field-error" data-for="city"></span>
+            </div>
+          </div>
+          <div class="form-row two-col">
+            <div>
+              <label for="card">Card Number</label>
+              <input type="text" id="card" name="card" placeholder="4242 4242 4242 4242" required />
+              <span class="field-error" data-for="card"></span>
+            </div>
+            <div>
+              <label for="expiry">Expiry</label>
+              <input type="text" id="expiry" name="expiry" placeholder="12/34" required />
+              <span class="field-error" data-for="expiry"></span>
+            </div>
+          </div>
+          <div class="form-row two-col">
+            <div>
+              <label for="cvc">CVC</label>
+              <input type="text" id="cvc" name="cvc" placeholder="123" required />
+              <span class="field-error" data-for="cvc"></span>
+            </div>
+            <div class="order-summary">
+              <p>Order Total</p>
+              <p class="order-total" id="order-total">$0.00</p>
+            </div>
+          </div>
+          <button type="submit" class="btn primary full-width" id="pay-button">Confirm Mock Payment</button>
+          <p class="checkout-note">This is a demo experience. No real payments are processed.</p>
+          <p class="checkout-success" id="checkout-success" hidden>🔥 Order placed! Your bottles are (pretend) on the way.</p>
+        </form>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <header class="section-header">
+        <h2>Crafted to Ignite</h2>
+        <p>Sizzle &amp; Drizzle is all about layering heat with flavor, not just burning your taste buds.</p>
+      </header>
+      <div class="about-grid">
+        <div class="about-card">
+          <h3>Real Peppers Only</h3>
+          <p>We source vibrant chilies from small farms and let their natural color and character shine through.</p>
+        </div>
+        <div class="about-card">
+          <h3>Built for Drizzling</h3>
+          <p>Our sauces are engineered for the perfect pour: not too thick, not too thin, just ultra-drizzlable.</p>
+        </div>
+        <div class="about-card">
+          <h3>Heat with a Curve</h3>
+          <p>Each bottle climbs slowly, giving you time to taste the layers before the fire hits its peak.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Sizzle &amp; Drizzle. Crafted with heat &amp; heart.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
