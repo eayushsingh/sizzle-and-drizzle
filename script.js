@@ -7,8 +7,8 @@ const products = [
     description: "Balanced chili, citrus, and garlic for drizzling on literally everything.",
     price: 11.0,
     heatDots: 2,
-    image: "assets/bottle-littered.png",
-    peppersImage: "assets/pure-redchilli.png",
+    image: "bottle-littered.png",
+    peppersImage: "pure-redchilli.png",
   },
   {
     id: "midnight-02",
@@ -17,8 +17,8 @@ const products = [
     description: "Chipotle, black garlic, and espresso for a dark, creeping warmth.",
     price: 13.0,
     heatDots: 3,
-    image: "assets/bottle-green.png",
-    peppersImage: "assets/pure-redchilli.png",
+    image: "bottle-green.png",
+    peppersImage: "pure-redchilli.png",
   },
   {
     id: "cinder-03",
@@ -27,8 +27,8 @@ const products = [
     description: "Habanero, pineapple, and hibiscus blooming into a bright, high heat.",
     price: 12.0,
     heatDots: 4,
-    image: "assets/bottle-orange.png",
-    peppersImage: "assets/pure-redchilli.png",
+    image: "bottle-orange.png",
+    peppersImage: "pure-redchilli.png",
   },
   {
     id: "garlic-04",
@@ -37,8 +37,8 @@ const products = [
     description: "Roasted garlic wrapped in a warm chilli glow for savory lovers.",
     price: 12.5,
     heatDots: 3,
-    image: "assets/Garlic-chilli.png",
-    peppersImage: "assets/pure-redchilli.png",
+    image: "Garlic-chilli.png",
+    peppersImage: "pure-redchilli.png",
   },
   {
     id: "authentic-05",
@@ -47,8 +47,8 @@ const products = [
     description: "A rich, smoky blend built for slow-cooked meals and grilled favorites.",
     price: 13.5,
     heatDots: 4,
-    image: "assets/authentic-taste.png",
-    peppersImage: "assets/pure-redchilli.png",
+    image: "authentic-taste.png",
+    peppersImage: "pure-redchilli.png",
   },
 ];
 
