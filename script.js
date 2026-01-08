@@ -106,7 +106,7 @@ function updateCartCount() {
 function calcCartTotals() {
   let subtotal = 0;
   cart.forEach((item) => {
-    subtotal += item.product.price * item.quantity;
+    subtotal = subtotal+ item.product.price * item.quantity;
   });
   const shipping = subtotal > 0 ? 4 : 0;
   const total = subtotal + shipping;
