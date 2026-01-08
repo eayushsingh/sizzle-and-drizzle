@@ -1,5 +1,5 @@
 // Core product catalog: image-first bottles with heat + price
-const products = [
+const product = [
   {
     id: "ember-01",
     name: "Ember Drip",
