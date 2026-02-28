@@ -284,7 +284,7 @@ function validateCheckoutForm() {
     } else if (fieldName === "card" && input.value.replace(/\s+/g, "").length < 12) {
       message = "Enter a mock 12+ digit card.";
     } else if (fieldName === "cvc" && input.value.trim().length < 3) {
-      message = "CVC should be at least 3 digits.";
+      message = "CVC should be at least 6 digits.";
     }
 
     if (message) {
