@@ -45,7 +45,7 @@ const product = [
     name: "Authentic Taste",
     label: "Smoky Heritage",
     description: "A rich, smoky blend built for slow-cooked meals and grilled favorites.",
-    price: 13.5,
+    price: 26.5,
     heatDots: 4,
     image: "authentic-taste.png",
     peppersImage: "pure-redchilli.png",
