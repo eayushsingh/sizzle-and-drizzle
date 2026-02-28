@@ -42,7 +42,7 @@ const product = [
   },
   {
     id: "authentic-05",
-    name: "Authentic Taste",
+    name: "Authentic Taste Driven",
     label: "Smoky Heritage",
     description: "A rich, smoky blend built for slow-cooked meals and grilled favorites.",
     price: 26.5,
