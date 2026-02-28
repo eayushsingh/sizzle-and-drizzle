@@ -238,7 +238,7 @@ function setupEventListeners() {
   checkoutForm.addEventListener("submit", (e) => {
     e.preventDefault();
     const wasValid = validateCheckoutForm();
-    const { total } = calcCartTotals();
+    const { total } = calcCartTotal();
 
     if (!wasValid) return;
     if (total === 0) {
