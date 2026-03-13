@@ -109,7 +109,7 @@ function calcCartTotals() {
     subtotal = subtotal+ item.product.price * item.quantity;
   });
   const shipping = subtotal > 0 ? 4 : 0;
-  const total = subtotal + shipping;
+  let total = subtotal + shipping;
   return { subtotal, shipping, total };
 }
 
