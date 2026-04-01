@@ -1,4 +1,4 @@
-# Sizzle & Drizzle
+# Sizzle & Drizzle ---
 
 A single-page, fully client-side hot sauce shopping experience with a dark, modern aesthetic and responsive layout.
 
