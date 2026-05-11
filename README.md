@@ -1,3 +1,5 @@
+Now this will be the totally experimental project anybody can try or push any other thing
+
 # Sizzle & Drizzle ---
 
 A single-page, fully client-side hot sauce shopping experience with a dark, modern aesthetic and responsive layout.
