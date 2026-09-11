@@ -53,6 +53,7 @@ const product = [
 ];
 
 const cart = new Map();
+const cart = new Map();
 
 function formatPrice(value) {
   return `$${value.toFixed(2)}`;
