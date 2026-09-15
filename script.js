@@ -54,6 +54,7 @@ const product = [
 
 const cart = new Map();
 const cart = new Map();
+const cart = new Map();
 
 function formatPrice(value) {
   return `$${value.toFixed(2)}`;
@@ -76,7 +77,7 @@ function renderProducts(filtered = products) {
       <div class="product-image">
         <img src="${product.image}" alt="${product.name} bottle from Sizzle &amp; Drizzle" />
       </div>
-      <div class="product-body">
+      <div class="product-fullbody">
         <div class="product-row">
           <div>
             <div class="product-title">${product.name}</div>
