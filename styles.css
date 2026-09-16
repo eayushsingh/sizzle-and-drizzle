@@ -333,7 +333,7 @@ main {
 
 .hero-chilies-floor {
   position: absolute;
-  bottom: -10%;
+  bottom: -11%;
   left: 50%;
   transform: translateX(-50%);
   width: 90%;
