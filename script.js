@@ -4,7 +4,7 @@ const product = [
     id: "ember-01",
     name: "Ember Drip",
     label: "Everyday Heat",
-    description: "Balanced chili, citrus, and garlic for drizzling on literally everything.",
+    description: "Balanced chili, citrus, and garlic for drizzling on literally everything, It will feel nostalgic.",
     price: 560.0,
     heatDots: 2,
     image: "bottle-littered.png",
