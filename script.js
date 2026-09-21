@@ -170,7 +170,7 @@ function renderCart() {
 
 function addToCart(productId) {
   const product = products.find((p) => p.id === productId);
-  if (!product) return;
+  if (!product) return "Not Found";
 
   if (cart.has(productId)) {
     const existing = cart.get(productId);
