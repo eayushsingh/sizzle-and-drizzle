@@ -50,6 +50,16 @@ const product = [
     image: "authentic-taste.png",
     peppersImage: "pure-redchilli.png",
   },
+  {
+    id: "Night-06",
+    name: "Garlic Chilli Glow",
+    label: "Garlic Heat",
+    description: "Roasted garlic wrapped in a warm chilli glow for savory lovers.",
+    price: 12.7,
+    heatDots: 3,
+    image: "Garlic-chilli.png",
+    peppersImage: "pure-redchilli.png",
+  },
 ];
 
 const cart = new Map();
