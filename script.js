@@ -52,8 +52,8 @@ const product = [
   },
   {
     id: "Night-06",
-    name: "Garlic Chilli Glow",
-    label: "Garlic Heat",
+    name: "Chilli Glow",
+    label: "Heat",
     description: "Roasted garlic wrapped in a warm chilli glow for savory lovers.",
     price: 12.7,
     heatDots: 3,
